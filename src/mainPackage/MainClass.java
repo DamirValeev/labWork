@@ -1,5 +1,8 @@
 package mainPackage;
 
+import mainPackage.xmlPrint.PrintXml;
+import org.xml.sax.SAXException;
+
 import javax.annotation.processing.SupportedSourceVersion;
 import javax.sql.rowset.WebRowSet;
 import javax.xml.parsers.ParserConfigurationException;
@@ -23,13 +26,21 @@ import java.util.Scanner;
 public class MainClass {
     public static void main(String[] args) throws SQLException, TransformerException, ParserConfigurationException {
         try {
-            Class.forName("org.sqlite.JDBC");
-            SwithMenu.sWMain();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+            PrintXml.printXmlFile();
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (SAXException e) {
+            e.printStackTrace();
         }
+
+//        try {
+//            Class.forName("org.sqlite.JDBC");
+//            SwithMenu.sWMain();
+//        } catch (ClassNotFoundException e) {
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 
         /* Check Valid Data Code
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
